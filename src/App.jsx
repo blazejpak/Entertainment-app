@@ -1,5 +1,4 @@
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 
 import Root from "./pages/Root";
 import HomePage from "./pages/HomePage/HomePage";
@@ -15,6 +14,9 @@ import {
 } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import SeriesPage from "./pages/SeriesPage/SeriesPage";
+import BookmarkPage from "./pages/BookmarkPage/BookmarkPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +27,21 @@ const router = createBrowserRouter(
         <Route
           path="/home"
           element={<HomePage />}
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path="/movies"
+          element={<MoviesPage />}
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path="/series"
+          element={<SeriesPage />}
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path="/bookmark"
+          element={<BookmarkPage />}
           errorElement={<ErrorPage />}
         />
       </Route>

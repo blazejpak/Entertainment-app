@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        layoutSM: "56px 1fr",
+        layoutMD: "92px 1fr",
+      },
+      gridTemplateColumns: {
+        layoutLG: "136px 1fr",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <main className="flex flex-col gap-14 items-center ">
+    <main className="flex flex-col gap-14 items-center col-span-full">
       <img src={Logo} className="h-6 w-8 mt-12" />
       <div className="flex flex-col  bg-[#161D2F] rounded-lg px-6 pt-6 pb-8 gap-6 w-[90%] max-w-[330px] sm:max-w-[400px] ">
         <h1 className="font-light text-4xl">Login</h1>
