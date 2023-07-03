@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { useDataContext } from "../context/DataContext";
 
 import { ReactComponent as MovieIcon } from "../assets/icon-category-movie.svg";
 import { ReactComponent as BookmarkedEmptyIcon } from "../assets/icon-bookmark-empty.svg";
@@ -7,13 +9,28 @@ import { ReactComponent as PlayIcon } from "../assets/icon-play.svg";
 
 const Trending = ({ item }) => {
   const [isBookmarked, setIsBookmarked] = useState(item.isBookmarked);
+  const [isHover, setIsHover] = useState(false);
+
+  const { toggleBookmarked, dataLoaded } = useDataContext();
 
   const bookmarkHandler = () => {
-    setIsBookmarked((prevState) => !prevState);
+    toggleBookmarked(item.title);
   };
 
+  useEffect(() => {
+    setIsBookmarked(item.isBookmarked);
+  }, [item.isBookmarked]);
+
   return (
-    <div className="relative mr-4 inline-block  ">
+    <div
+      className="relative mr-4 inline-block  "
+      onMouseEnter={() => {
+        setIsHover(true);
+      }}
+      onMouseLeave={() => {
+        setIsHover(false);
+      }}
+    >
       <img
         src={item.thumbnail.trending.small}
         alt={item.title}
@@ -24,7 +41,11 @@ const Trending = ({ item }) => {
         alt={item.title}
         className="hidden h-[230px] w-[470px] rounded-lg transition-opacity hover:opacity-60 md:block "
       />
-      <div className="absolute left-0 top-0 flex h-full w-full  items-center justify-center opacity-0 hover:opacity-100">
+      <div
+        className={`absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  justify-center opacity-0  ${
+          isHover ? "opacity-100" : ""
+        }`}
+      >
         <div className="flex h-12 w-[120px] cursor-pointer items-center justify-center gap-4 rounded-3xl bg-white/25">
           <PlayIcon />
           <h3 className="text-lg">Play</h3>

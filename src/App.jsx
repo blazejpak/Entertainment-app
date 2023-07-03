@@ -17,6 +17,7 @@ import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import SeriesPage from "./pages/SeriesPage/SeriesPage";
 import BookmarkPage from "./pages/BookmarkPage/BookmarkPage";
+import { DataContextProvider } from "./context/DataContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,9 +52,11 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <AuthContextProvider>
-      <RouterProvider router={router} />
-    </AuthContextProvider>
+    <DataContextProvider>
+      <AuthContextProvider>
+        <RouterProvider router={router} />
+      </AuthContextProvider>
+    </DataContextProvider>
   );
 }
 
