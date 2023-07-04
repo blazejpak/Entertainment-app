@@ -18,7 +18,7 @@ const SeriesPage = () => {
     return (
       <main className="ml-4">
         <Search onChange={searchOnChange} placeholder="Search for TV series" />
-        <section className="mt-4">
+        <section className="mt-9">
           <div>
             <h2 className="text-xl md:text-[32px]">
               {search ? "Found results:" : "TV Series"}

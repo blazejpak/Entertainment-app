@@ -5,7 +5,7 @@ const ButtonSubmit = ({ value }) => {
     <input
       type="submit"
       value={value}
-      className="w-full bg-[#FC4747] rounded font-light text-center py-3 mt-3"
+      className="mt-3 w-full cursor-pointer rounded bg-[#FC4747] py-3 text-center font-light transition-colors hover:bg-white hover:text-[#10141E]"
     />
   );
 };

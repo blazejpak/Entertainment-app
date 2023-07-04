@@ -37,7 +37,7 @@ const HomePage = () => {
           onChange={searchOnChange}
           placeholder="Search for movies or TV Series"
         />
-        <h1 className="mt-6 text-xl font-light tracking-tight md:text-[32px]">
+        <h1 className="mt-9 text-xl font-light tracking-tight md:text-[32px]">
           Trending
         </h1>
         <section>

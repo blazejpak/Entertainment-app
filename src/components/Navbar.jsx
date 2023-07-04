@@ -16,7 +16,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const [activeLink, setActiveLink] = useState(location.pathname);
-  console.log(activeLink);
 
   useEffect(() => {
     setActiveLink(location.pathname);
@@ -73,13 +72,13 @@ const Navbar = () => {
           />
         </Link>
       </nav>
-      <div className="relative mr-2 flex items-center gap-8 lg:h-10 lg:w-10 lg:flex-col">
+      <div className="relative mr-2 flex items-center gap-8 lg:mb-12 lg:h-10 lg:w-10 lg:flex-col">
         <img
           src={ProfileImg}
           className="h-6 w-6 md:h-8 md:w-8   lg:h-10 lg:w-10"
         />
         <div className="cursor-pointer " onClick={logoutHandler}>
-          <SlLogout className="h-[24px] w-[24px] md:h-[32px] md:w-[32px]" />
+          <SlLogout className="h-[24px] w-[24px] transition-transform hover:scale-105 md:h-[32px] md:w-[32px]" />
         </div>
       </div>
     </div>

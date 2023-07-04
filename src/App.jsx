@@ -1,10 +1,16 @@
 import reactLogo from "./assets/react.svg";
+import React, { lazy } from "react";
 
 import Root from "./pages/Root";
-import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/Authentication/Login";
 import SignUp from "./pages/Authentication/SignUp";
 import ErrorPage from "./pages/ErrorPage";
+import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
+const SeriesPage = lazy(() => import("./pages/SeriesPage/SeriesPage"));
+const BookmarkPage = lazy(() => import("./pages/BookmarkPage/BookmarkPage"));
 
 import {
   Route,
@@ -13,10 +19,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
-import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
-import MoviesPage from "./pages/MoviesPage/MoviesPage";
-import SeriesPage from "./pages/SeriesPage/SeriesPage";
-import BookmarkPage from "./pages/BookmarkPage/BookmarkPage";
 import { DataContextProvider } from "./context/DataContext";
 
 const router = createBrowserRouter(
