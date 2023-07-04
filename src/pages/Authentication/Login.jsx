@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <main className="col-span-full flex flex-col items-center gap-14">
-      <img src={Logo} className="mt-12 h-6 w-8" />
+      <img src={Logo} className="mt-12 h-6 w-8" alt="Logo" />
       <div className="flex w-[90%]  max-w-[330px] flex-col gap-6 rounded-lg bg-[#161D2F] px-6 pb-8 pt-6 sm:max-w-[400px] ">
         <h1 className="text-4xl font-light">Login</h1>
         <form className="mt-5 flex flex-col gap-6" onSubmit={handleSubmit}>
