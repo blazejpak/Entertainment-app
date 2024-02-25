@@ -56,7 +56,7 @@ const Login = () => {
             }`}
           >
             <Input
-              placeholder="Email address"
+              placeholder="test@gmail.com"
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               isEmpty={`${emailError ? "border-[#FC4747]" : ""}`}
@@ -69,7 +69,7 @@ const Login = () => {
             }`}
           >
             <Input
-              placeholder="Password"
+              placeholder="test123"
               onChange={(e) => setPassword(e.target.value)}
               type="password"
             />
